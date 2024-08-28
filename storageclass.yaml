@@ -29,29 +29,29 @@ parameters:
 
   # The secrets have to contain user and/or Ceph admin credentials.
   csi.storage.k8s.io/provisioner-secret-name: csi-cephfs-secret
-  csi.storage.k8s.io/provisioner-secret-namespace: default
+  csi.storage.k8s.io/provisioner-secret-namespace: ceph-csi-cephfs
   csi.storage.k8s.io/controller-expand-secret-name: csi-cephfs-secret
-  csi.storage.k8s.io/controller-expand-secret-namespace: default
+  csi.storage.k8s.io/controller-expand-secret-namespace: ceph-csi-cephfs
   csi.storage.k8s.io/node-stage-secret-name: csi-cephfs-secret
-  csi.storage.k8s.io/node-stage-secret-namespace: default
+  csi.storage.k8s.io/node-stage-secret-namespace: ceph-csi-cephfs
 
   # (optional) The driver can use either ceph-fuse (fuse) or
   # ceph kernelclient (kernel).
-  # If omitted, default volume mounter will be used - this is
+  # If omitted, ceph-csi-cephfs volume mounter will be used - this is
   # determined by probing for ceph-fuse and mount.ceph
   # mounter: kernel
 
   # (optional) Prefix to use for naming subvolumes.
-  # If omitted, defaults to "csi-vol-".
+  # If omitted, ceph-csi-cephfss to "csi-vol-".
   # volumeNamePrefix: "csi-vol-"
 
   # (optional) Boolean value. The PVC shall be backed by the CephFS snapshot
   # specified in its data source. `pool` parameter must not be specified.
-  # (defaults to `true`)
+  # (ceph-csi-cephfss to `true`)
   # backingSnapshot: "false"
 
   # (optional) Instruct the plugin it has to encrypt the volume
-  # By default it is disabled. Valid values are "true" or "false".
+  # By ceph-csi-cephfs it is disabled. Valid values are "true" or "false".
   # A string is expected here, i.e. "true", not true.
   # encrypted: "true"
 
