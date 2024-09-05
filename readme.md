@@ -1,4 +1,5 @@
 ceph fs subvolumegroup create cephfs csi
+
 ceph fs subvolumegroup ls cephfs
 
 Установка csi-драйверов cephfs и rbd для k8s:
