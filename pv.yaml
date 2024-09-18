@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: test-app
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 5Gi
+  csi:
+    driver: cephfs.csi.ceph.com
+    nodeStageSecretRef:
+      name: csi-cephfs-secret
+      namespace: ceph-csi-cephfs    
+    volumeAttributes:
+      "clusterID": "e7d0c7e6-70dc-11ef-aa6e-0050568de66b"
+      "fsName": "cephfs"
+      "staticVolume": "true"
+      "rootPath": /volumes/app/tnsnames
+    volumeHandle: test-app
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem
+  storageClassName: csi-cephfs-sc
